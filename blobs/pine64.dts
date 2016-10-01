@@ -1543,7 +1543,7 @@
             pinctrl-1 = <0x00000020>;
             uart2_port = <0x00000002>;
             uart2_type = <0x00000004>;
-            status = "okay";
+            status = "disabled";
             pinctrl-0 = <0x000000a4>;
         };
         uart@01c28c00 {
@@ -1747,7 +1747,7 @@
             frametype = <0x00000000>;
             tdm_config = <0x00000001>;
             tdm_num = <0x00000000>;
-            status = "disabled";
+            status = "okay";
             linux,phandle = <0x0000004e>;
             phandle = <0x0000004e>;
             device_type = "daudio0";
@@ -1812,7 +1812,7 @@
         sound@1 {
             compatible = "allwinner,sunxi-daudio0-machine";
             sunxi,daudio0-controller = <0x0000004e>;
-            status = "disabled";
+            status = "okay";
             device_type = "snddaudio0";
         };
         sound@2 {
@@ -2574,7 +2574,7 @@
             interrupt-names = "gmacirq";
             clocks = <0x0000008f>;
             clock-names = "gmac";
-            phy-mode = "rgmii";
+            phy-mode = "rmii";
             tx-delay = <0x00000003>;
             rx-delay = <0x00000000>;
             gmac_power1 = "axp81x_dc1sw:0";
