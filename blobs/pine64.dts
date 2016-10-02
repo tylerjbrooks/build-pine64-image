@@ -765,7 +765,7 @@
             linux,phandle = <0x00000079>;
             phandle = <0x00000079>;
             s_cir0@0 {
-                allwinner,pins = "PL11";
+                allwinner,pins = "L11";
                 allwinner,function = "s_cir0";
                 allwinner,muxsel = <0x00000002>;
                 allwinner,drive = <0x00000002>;
@@ -1583,7 +1583,7 @@
             clock-frequency = <0x00061a80>;
             pinctrl-names = "default", "sleep";
             pinctrl-1 = <0x00000029>;
-            status = "okay";
+            status = "disabled";
             pinctrl-0 = <0x0000009f>;
         };
         twi@0x01c2b000 {
@@ -1597,7 +1597,7 @@
             clock-frequency = <0x00030d40>;
             pinctrl-names = "default", "sleep";
             pinctrl-1 = <0x0000002c>;
-            status = "okay";
+            status = "disabled";
             pinctrl-0 = <0x000000a0>;
         };
         twi@0x01c2b400 {
@@ -1611,7 +1611,7 @@
             clock-frequency = <0x00030d40>;
             pinctrl-names = "default", "sleep";
             pinctrl-1 = <0x0000002f>;
-            status = "disabled";
+            status = "okay";
             pinctrl-0 = <0x000000a1>;
         };
         usbc0@0 {
