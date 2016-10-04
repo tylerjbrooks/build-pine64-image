@@ -1613,6 +1613,10 @@
             pinctrl-1 = <0x0000002f>;
             status = "okay";
             pinctrl-0 = <0x000000a1>;
+	    	pcm5122: pcm5122@4c {
+		    	compatible = "ti,pcm5122";
+		    	reg = <0x4c>;
+	    	};
         };
         usbc0@0 {
             device_type = "usbc0";
@@ -1812,7 +1816,7 @@
         sound@1 {
             compatible = "allwinner,sunxi-daudio0-machine";
             sunxi,daudio0-controller = <0x0000004e>;
-            status = "okay";
+            status = "disabled";
             device_type = "snddaudio0";
         };
         sound@2 {
@@ -1833,6 +1837,12 @@
             status = "disabled";
             device_type = "sndspdif";
         };
+		sound@5 {
+            compatible = "allwinner,sunxi-daudio-pcm512x-machine";
+            sunxi,daudio-pcm5122-controller = <0x0000004e>;
+            status = "okay";
+            device_type = "snddaudio-pcm512x";
+		};
         spi@01c68000 {
             #address-cells = <0x00000001>;
             #size-cells = <0x00000000>;
