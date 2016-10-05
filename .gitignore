@@ -4,6 +4,7 @@
 /simpleimage/*.bin
 /simpleimage/distro
 /simpleimage/distro_sav
+/simpleimage/distro_preconfig
 /u-boot-postprocess/out
 /lichee
 /u-boot-pine64
