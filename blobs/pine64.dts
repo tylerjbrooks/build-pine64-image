@@ -1838,10 +1838,10 @@
             device_type = "sndspdif";
         };
 		sound@5 {
-            compatible = "allwinner,sunxi-daudio-pcm5122-machine";
-            sunxi,daudio-pcm5122-controller = <0x0000004e>;
+            compatible = "allwinner,sunxi-pcm5122-machine";
+            sunxi,pcm5122-controller = <0x0000004e>;
             status = "okay";
-            device_type = "snddaudiopcm5122";
+            device_type = "sndpcm5122";
 		};
         spi@01c68000 {
             #address-cells = <0x00000001>;
