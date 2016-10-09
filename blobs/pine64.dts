@@ -1616,11 +1616,6 @@
 	    pcm5122: pcm5122@4c {
 	 	compatible = "ti,pcm5122";
 	    	reg = <0x4c>;
-			slave1 = <&pcm5122s1>;
-    	    };
-	    pcm5122s1: pcm5122@4e {
-	 	compatible = "ti,pcm5122";
-	    	reg = <0x4e>;
     	    };
         };
         usbc0@0 {
