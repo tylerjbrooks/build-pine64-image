@@ -2212,7 +2212,7 @@
             compatible = "allwinner,sun50i-vdevice";
             pinctrl-names = "default";
             test-gpios = <0x00000079 0x0000000b 0x00000000 0x00000001 0x00000002 0x00000003 0x00000004>;
-            status = "okay";
+            status = "disabled";
             device_type = "Vdevice";
             pinctrl-0 = <0x000000b9>;
         };
