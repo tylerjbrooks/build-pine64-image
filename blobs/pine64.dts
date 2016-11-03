@@ -2150,15 +2150,17 @@
             pinctrl-0 = <&twi2_pins_a>;
             pinctrl-1 = <&twi2_pins_b>;
             status = "okay";
-	    	pcm5122_tweeters: pcm5122_tweeters@4c {
+	    	pcm5122_mid: pcm5122_mid@0x4c {
 	 			compatible = "ti,pcm5122";
 	    		reg = <0x4c>;
+				woofer = <&pcm5122_woofer>;
+				tweeter = <&pcm5122_tweeter>;
     	    };
-	    	pcm5122_mids: pcm5122_mids@4d {
+	    	pcm5122_woofer: pcm5122_woofer@0x4d {
 	 			compatible = "ti,pcm5122";
 	    		reg = <0x4d>;
     	    };
-	    	pcm5122_woofer: pcm5122_woofer@4e {
+	    	pcm5122_tweeter: pcm5122_tweeter@0x4e {
 	 			compatible = "ti,pcm5122";
 	    		reg = <0x4e>;
     	    };
