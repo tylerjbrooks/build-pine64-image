@@ -2153,8 +2153,8 @@
 	    	pcm5122_mid: pcm5122_mid@0x4c {
 	 			compatible = "ti,pcm5122";
 	    		reg = <0x4c>;
-				woofer = <&pcm5122_woofer>;
-				tweeter = <&pcm5122_tweeter>;
+				digispeaker,woofer = <&pcm5122_woofer>;
+				digispeaker,tweeter = <&pcm5122_tweeter>;
     	    };
 	    	pcm5122_woofer: pcm5122_woofer@0x4d {
 	 			compatible = "ti,pcm5122";
@@ -2418,6 +2418,7 @@
             sunxi,pcm5122-controller = <&daudio0>;
             status = "okay";
             device_type = "sndpcm5122";
+			digispeaker,codec = <&pcm5122_mid>;
 		};
 
         spi0: spi@01c68000 {
