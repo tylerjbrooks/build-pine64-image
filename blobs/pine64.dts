@@ -10,7 +10,7 @@
 /{
     model = "sun50iw1p1";
     compatible = "arm,sun50iw1p1", "arm,sun50iw1p1";
-    interrupt-parent = <0x01>;
+    interrupt-parent = <&gic>;
     #address-cells = <0x02>;
     #size-cells = <0x02>;
 
@@ -325,7 +325,7 @@
         reg = <0x00 0x01c20000 0x00 
 			0x0320 0x00 0x01f01400 
 			0x00 0xb0 0x00 
-			0x01f00060 0x00 0x04>;
+			0x01f0006 0x00 0x04>;
 
         clk_losc: losc {
             #clock-cells = <0x00>;
@@ -2062,7 +2062,7 @@
             pinctrl-1 = <&uart1_pins_b>;
             uart1_port = <0x01>;
             uart1_type = <0x04>;
-            status = "okay";
+            status = "disabled";
         };
 
         uart2: uart@01c28800 {
@@ -2090,7 +2090,7 @@
             pinctrl-1 = <&uart3_pins_b>;
             uart3_port = <0x03>;
             uart3_type = <0x04>;
-            status = "okay";
+            status = "disabled";
         };
 
         uart4: uart@01c29000 {
@@ -2104,7 +2104,7 @@
             pinctrl-1 = <&uart4_pins_b>;
             uart4_port = <0x04>;
             uart4_type = <0x04>;
-            status = "okay";
+            status = "disabled";
         };
 
         twi0: twi@0x01c2ac00 {
@@ -2150,18 +2150,20 @@
             pinctrl-0 = <&twi2_pins_a>;
             pinctrl-1 = <&twi2_pins_b>;
             status = "okay";
-	    	pcm5122_mid: pcm5122_mid@0x4c {
-	 			compatible = "ti,pcm5122";
+	    	pcm512x_mid: pcm512x_mid@0x4c {
+	 			compatible = "ti,pcm512x";
 	    		reg = <0x4c>;
-				digispeaker,woofer = <&pcm5122_woofer>;
-				digispeaker,tweeter = <&pcm5122_tweeter>;
+				digispeaker,woofer = <&pcm512x_woofer>;
+				digispeaker,tweeter = <&pcm512x_tweeter>;
+				digispeaker,gpio-mute = <&pio 0x01 0x01 0x00 0x00 0x00 0x00>;
+				digispeaker,gpio-detect = <&pio 0x01 0x02 0x00 0x00 0x00 0x00>;
     	    };
-	    	pcm5122_woofer: pcm5122_woofer@0x4d {
-	 			compatible = "ti,pcm5122";
+	    	pcm512x_woofer: pcm512x_woofer@0x4d {
+	 			compatible = "ti,pcm512x";
 	    		reg = <0x4d>;
     	    };
-	    	pcm5122_tweeter: pcm5122_tweeter@0x4e {
-	 			compatible = "ti,pcm5122";
+	    	pcm512x_tweeter: pcm512x_tweeter@0x4e {
+	 			compatible = "ti,pcm512x";
 	    		reg = <0x4e>;
     	    };
         };
@@ -2413,12 +2415,12 @@
             device_type = "sndspdif";
         };
 
-		sndpcm5122: sound@5 {
-            compatible = "allwinner,sunxi-pcm5122-machine";
-            sunxi,pcm5122-controller = <&daudio0>;
+		sndpcm512x: sound@5 {
+            compatible = "allwinner,sunxi-pcm512x-machine";
+            sunxi,pcm512x-controller = <&daudio0>;
             status = "okay";
-            device_type = "sndpcm5122";
-			digispeaker,codec = <&pcm5122_mid>;
+            device_type = "sndpcm512x";
+			digispeaker,codec = <&pcm512x_mid>;
 		};
 
         spi0: spi@01c68000 {
@@ -2744,7 +2746,7 @@
             pinctrl-0 = <&csi0_pins_a>;
             pinctrl-1 = <&csi0_pins_b>;
             csi0_sensor_list = <0x01>;
-            status = "okay";
+            status = "disabled";
             csi0_mck = <&pio 0x04 0x01 0x00 0x00 0x01 0x00>;
             csi_dev0: dev@0 {
                 csi0_dev0_mname = "s5k4ec";
@@ -2829,7 +2831,7 @@
             gpios = <&pio 0x2 0x8 0x0 0x0 0x0 0x0>;
             pinctrl-names = "default";
             pinctrl-0 = <&w1_pin_pins_a>;
-            status = "okay";
+            status = "disabled";
         };
 
         cryptoengine: ce@1c15000 {
